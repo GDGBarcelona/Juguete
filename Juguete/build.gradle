@@ -11,6 +11,12 @@ android {
         versionName "1.0"
     }
 
+    signingConfigs {
+        debug {
+            storeFile file('../distribution/debug.keystore')
+        }
+    }
+
     buildTypes {
         release {
             runProguard false
@@ -41,5 +47,4 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.2.0'
     compile 'com.telly:groundy:1.5'
     provided 'com.telly:groundy-compiler:1.5'
-
 }
