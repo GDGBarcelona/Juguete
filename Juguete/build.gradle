@@ -11,6 +11,10 @@ android {
         versionName "1.0"
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     signingConfigs {
         debug {
             storeFile file('../distribution/debug.keystore')
