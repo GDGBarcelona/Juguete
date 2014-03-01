@@ -15,3 +15,7 @@ allprojects {
         maven { url "http://clinker.47deg.com/nexus/content/repositories/snapshots/" }
     }
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
+}
