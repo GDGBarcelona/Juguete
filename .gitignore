@@ -1,4 +1,4 @@
-lt application files
+# built application files
 *.apk
 *.ap_
 
@@ -38,3 +38,4 @@ proguard/
 
 # Signing
 signing/
+
