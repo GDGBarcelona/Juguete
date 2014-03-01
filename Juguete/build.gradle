@@ -11,6 +11,12 @@ android {
         versionName "1.0"
     }
 
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
     lintOptions {
         abortOnError false
     }
