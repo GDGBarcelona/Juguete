@@ -45,6 +45,20 @@ android {
             versionNameSuffix "-staging"
         }
     }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
+        }
+        debug {
+            java.srcDirs += ['src/debug/java']
+            setRoot('build-types/debug')
+        }
+        staging.setRoot('build-types/staging')
+        release.setRoot('build-types/release')
+    }
 }
 
 dependencies {
