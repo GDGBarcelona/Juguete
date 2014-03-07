@@ -2,7 +2,7 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion '19.0.3'
+    buildToolsVersion "19.0.2"
 
     defaultConfig {
         minSdkVersion 14
@@ -45,27 +45,17 @@ android {
             versionNameSuffix "-staging"
         }
     }
-
-    sourceSets {
-        main {
-            manifest.srcFile 'src/main/AndroidManifest.xml'
-            java.srcDirs = ['src/main/java']
-            res.srcDirs = ['src/main/res']
-        }
-        debug {
-            java.srcDirs += ['src/debug/java']
-            setRoot('build-types/debug')
-        }
-        staging.setRoot('build-types/staging')
-        release.setRoot('build-types/release')
-    }
 }
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
     compile 'com.etsy.android.grid:library:1.0.4'
-    compile 'ly.apps:android-rest:1.2-SNAPSHOT@aar'
+    compile ('ly.apps:android-rest:1.2.1-SNAPSHOT@aar') {
+        transitive = true
+        changing = true
+    }
     compile 'com.squareup.picasso:picasso:2.2.0'
     compile 'com.telly:groundy:1.5'
     provided 'com.telly:groundy-compiler:1.5'
-    compile project(':core')
 }
