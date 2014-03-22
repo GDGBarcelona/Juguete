@@ -7,6 +7,6 @@ import static org.junit.Assert.assertEquals;
 public class MyClassTest {
     @Test
     public void testPass() {
-        assertEquals(0, 0);
+        assertEquals(0, 5);
     }
 }
