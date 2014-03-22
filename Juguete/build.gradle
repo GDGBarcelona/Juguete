@@ -63,7 +63,11 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.etsy.android.grid:library:1.0.4'
+<<<<<<< HEAD
     compile ('ly.apps:android-rest:1.2.1-SNAPSHOT@aar'){
+=======
+    compile ('ly.apps:android-rest:1.2.1-SNAPSHOT@aar') {
+>>>>>>> 5f93ef847f4d20cebea3772c1ef3f95bf26a6774
         transitive = true
         changing = true
     }
