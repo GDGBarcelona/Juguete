@@ -2,26 +2,41 @@ package com.google.gdg.bcn.juguete;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
+
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.gdg.bcn.juguete.core.MyClass;
+import com.google.gdg.bcn.juguete.core.exception.ProgrammerMistake;
 
 public class MainActivity extends Activity {
+
+    //    public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd");
+    private TextView mTVCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         MyClass mc = new MyClass();
+        inicializarcomponentes();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    private void inicializarcomponentes() {
+
+        mTVCategory = (TextView) findViewById(R.id.category);
+    }
+
+    public void displayNumberOfTransactions(int transactionCount){
+
+        if (transactionCount<0){
+
+            throw new ProgrammerMistake(new IllegalArgumentException(String.format(
+                    "number of transactions can't be negative, but it's %1$d" , transactionCount)));
+
+        }
+        mTVCategory.setText(String.format("%1$d", transactionCount));
     }
 
     @Override
